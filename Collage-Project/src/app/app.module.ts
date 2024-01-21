@@ -10,7 +10,6 @@ import { MaterialModuleModule } from './material-module/material-module.module';
 import { OtpComponent } from './otp/otp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     LoginComponent,
     OtpComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
