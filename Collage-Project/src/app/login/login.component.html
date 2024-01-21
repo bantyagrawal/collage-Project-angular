@@ -1,0 +1,21 @@
+<div class="login-container">
+    <div class="example-container">
+        <form class="form">
+            <h3>Login Form</h3>
+            <mat-form-field class="field">
+                <input matInput [type]="email" placeholder="Enter Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <p *ngIf="submitted && !email" class="error">Please enter email</p>
+            <mat-form-field class="field">
+                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon style="color: rgb(22, 194, 6);">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <p *ngIf="submitted && !password" class="error">Please enter password</p>
+            
+            <button mat-button class="button" type="submit" (click)="submit()">Login</button>
+        </form>
+    </div>
+</div>
