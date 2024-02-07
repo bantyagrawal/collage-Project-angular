@@ -1,0 +1,10 @@
+.map {
+    height: 400px;
+    width: 400px;
+}
+
+.icon {
+    color: rgb(22, 194, 6);
+    padding-left: 370px;
+    cursor: pointer;
+}

@@ -10,6 +10,10 @@ import { MaterialModuleModule } from './material-module/material-module.module';
 import { OtpComponent } from './otp/otp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxOtpInputModule } from 'ngx-otp-input';
+import { SingupComponent } from './singup/singup.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './Shared/map/map.component';
 
 
 @NgModule({
@@ -17,6 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     LoginComponent,
     OtpComponent,
+    SingupComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +33,12 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxOtpInputModule,
     ToastrModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDoTCrXZ2_oe9Nt1jkZkZHiODhjdZPj7k4',
+    }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

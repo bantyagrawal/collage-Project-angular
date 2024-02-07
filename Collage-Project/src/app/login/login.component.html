@@ -1,21 +1,39 @@
 <div class="login-container">
     <div class="example-container">
-        <form class="form">
+        <form class="form" [formGroup]="loginForm">
             <h3>Login Form</h3>
+            <label class="label">Email</label>
             <mat-form-field class="field">
-                <input matInput [type]="email" placeholder="Enter Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                <input matInput type="email" placeholder="Enter Email" formControlName="email">
             </mat-form-field>
-            <p *ngIf="submitted && !email" class="error">Please enter email</p>
+            <div *ngIf="submitted && formControl['email'].errors">
+                <p class="error" *ngIf="submitted && formControl['email'].errors['required']">Please enter email</p>
+                <p class="error" *ngIf="submitted && formControl['email'].errors['email']">Please enter vailid email</p>
+            </div>
+            <label class="label">Password</label>
             <mat-form-field class="field">
-                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Password"
+                    formControlName="password">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
                     <mat-icon style="color: rgb(22, 194, 6);">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
             </mat-form-field>
-            <p *ngIf="submitted && !password" class="error">Please enter password</p>
-            
+            <div *ngIf="submitted && formControl['password'].errors">
+                <p *ngIf="submitted && formControl['password'].errors['required']" class="error">Please enter password
+                </p>
+            </div>
+            <div class="inline-center">
+                <mat-checkbox color="success" formControlName="checkbox">Remember
+                    me</mat-checkbox>
+                <p class="forgot-password">
+                    <a>Forgot Password</a>
+                </p>
+            </div>
             <button mat-button class="button" type="submit" (click)="submit()">Login</button>
+            <div class="signup">
+                <p>Not registered yet? <span routerLink="/signup" >Create an account</span></p>
+            </div>
         </form>
     </div>
 </div>

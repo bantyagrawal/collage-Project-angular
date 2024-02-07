@@ -9,19 +9,21 @@
 }
 
 .field {
-    width: 100%;
+    width: 390px;
+    margin-left: 5px;
 }
 
 .button {
     background-color: rgb(22, 194, 6);
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 150px;
-    margin-left: 120px;
+    /* width: 150px; */
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .form {
-    height: 400px;
+    height: 525px;
     width: 400px;
     background-color: white;
     display: flex;
@@ -30,7 +32,7 @@
 }
 
 h3 {
-    margin: 50px 0px 40px 0px;
+    margin: 40px 0px 30px 0px;
     font-size: 30px;
     font-weight: bold;
     color: rgb(22, 194, 6);
@@ -45,3 +47,36 @@ p {
     text-align: left;
     color: red;
 }
+
+.forgot-password {
+    color: rgb(22, 194, 6);
+    cursor: pointer;
+    padding-left: 130px;
+    margin-top: 12px;
+}
+
+.inline-center {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    margin-bottom: 5px;
+    margin-left: 5px
+}
+
+.signup {
+    text-align: center;
+}
+
+.signup p {
+    color: gray;
+}
+
+.signup p span {
+    color: rgb(22, 194, 6);
+    cursor: pointer;
+}
+
+
+  

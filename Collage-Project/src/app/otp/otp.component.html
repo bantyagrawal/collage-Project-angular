@@ -1,17 +1,14 @@
 <div class="otp-container">
     <div class="main">
-        <h3>
-            Login OTP
-        </h3>
-        <mat-form-field >
+        <h3>OTP Verification</h3>
+        <label>Enter Otp</label>
           <div>  
-            <input matInput type="tel" placeholder="Enter otp">
+            <ngx-otp-input [config]="otpInputConfig" (otpChange)="handeOtpChange($event)" (fill)="handleFillEvent($event)">
+            </ngx-otp-input>
           </div>
-        </mat-form-field>
-        <button mat-button class="button" type="submit"> Submit</button>
+        <button mat-button class="button" type="submit">Verify</button>
+        <div class="resend-otp">
+          <p>Didn't you receive OTP? <span>Resend OTP</span></p>
+        </div>
     </div>
 </div>
-
-
-  
-  

@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <span>BIJENDRA</span>
+    <span class="spacer"></span>
+    <mat-nav-list class="horizontal-list" routerLinkActive="active">
+        <li>
+            <a mat-list-item routerLink="">Home</a>
+        </li>
+        <li (click)="logout()">
+            <a mat-list-item>Logout</a>
+        </li>
+        <li>
+            <a mat-list-item routerLink="/otp" routerLinkActive="active">Otp</a>
+        </li>
+    </mat-nav-list>
+</mat-toolbar>

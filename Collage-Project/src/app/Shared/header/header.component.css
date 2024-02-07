@@ -1,0 +1,27 @@
+   mat-toolbar {
+       background-color: rgba(229, 176, 0, 255);
+   }
+
+   span {
+       padding-right: 10px;
+   }
+
+   .horizontal-list {
+       display: flex;
+       flex-direction: row;
+   }
+
+   .mat-list-item {
+    margin-right: 16px;
+  }
+
+.horizontal-list li:hover {
+    background-color: rgb(22, 194, 6);
+    cursor: pointer;
+  }
+
+  .active {
+    color: rgb(22, 194, 6);
+    cursor: pointer;
+  }
+  

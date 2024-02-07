@@ -1,0 +1,97 @@
+<div class="container">
+  <form class="form" [formGroup]="signupForm">
+    <h1>Sign up Form</h1>
+    <label class="label">Registration Number</label>
+    <mat-form-field class="field">
+      <mat-label>Registration Number</mat-label>
+      <mat-icon class="icon" matSuffix>confirmation_number</mat-icon>
+      <input type="text" matInput placeholder="Enter Registration Number" formControlName="registration_number">
+    </mat-form-field>
+
+    <label class="label">Name</label>
+    <mat-form-field class="field">
+      <mat-label>Name</mat-label>
+      <mat-icon class="icon" matSuffix>sentiment_very_satisfied</mat-icon>
+      <input type="text" matInput placeholder="Enter your name" formControlName="name">
+    </mat-form-field>
+
+    <label class="label">Email</label>
+    <mat-form-field class="field">
+      <mat-label>Email</mat-label>
+      <mat-icon class="icon" matSuffix>email</mat-icon>
+      <input type="email" matInput placeholder="Enter your email" formControlName="email">
+    </mat-form-field>
+
+    <label class="label">Mobile</label>
+    <mat-form-field class="field">
+      <mat-label>Mobile</mat-label>
+      <mat-icon class="icon" matSuffix>phone</mat-icon>
+      <input matInput placeholder="Enter your mobile" formControlName="mobile">
+    </mat-form-field>
+
+    <label class="label">Password</label>
+    <mat-form-field class="field">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Password" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon class="icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <label class="label">Confirm password</label>
+    <mat-form-field class="field">
+      <mat-label>Confirm password</mat-label>
+      <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Enter confirm password">
+      <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide2">
+        <mat-icon class="icon">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <label class="label">Course</label>
+    <mat-form-field class="field">
+      <mat-label>Choose an course</mat-label>
+      <mat-select formControlName="course">
+        <mat-option *ngFor="let option of course; let i = index;" [value]="option.name"
+          (click)="courseSelect(i)">{{option.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label class="label">Branch</label>
+    <mat-form-field class="field">
+      <mat-label>Choose an branch</mat-label>
+      <mat-select formControlName="branch">
+        <mat-option *ngFor="let option of branch; let i = index;" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label class="label">Year</label>
+    <mat-form-field class="field">
+      <mat-label>Choose an year</mat-label>
+      <mat-select formControlName="year">
+        <mat-option *ngFor="let option of year; let i = index;" [value]="option" (click)="selectYear(option)">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label class="label">Semester</label>
+    <mat-form-field class="field">
+      <mat-label>Choose an semester</mat-label>
+      <mat-select formControlName="semester">
+        <mat-option *ngFor="let option of semester; let i = index;" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label class="label">Address</label>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Enter your address" formControlName="address">
+      <mat-icon class="icon icon-pointer" matSuffix (click)="openDialog()">location_on</mat-icon>
+    </mat-form-field>
+
+    <button mat-button class="button" type="submit" (click)="submit()">Signup</button>
+    <div class="signup">
+      <p>Already have an account? <span routerLink="/login" >Login</span></p>
+  </div>
+  </form>
+</div>

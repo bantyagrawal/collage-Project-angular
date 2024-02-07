@@ -9,13 +9,13 @@
 }
 
 .main{ 
-    height: 250px;
+    height: 320px;
     width: 400px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-radius: 10px;
+    align-items: center;
 
 }
 
@@ -29,8 +29,30 @@ h3{
 .button {
     background-color: rgb(22, 194, 6);
     margin-top: 10px;
-    margin-bottom: 10px;
     width: 150px;
     border-radius: 20px;
 }
+
+.main h3 {
+    text-align: center;
+}
+
+.main label {
+    margin-bottom: 10px;
+}
+
+.main button {
+    margin-top: 20px;
+}
+
+.resend-otp {
+    text-align: center;
+    color: grey;
+    margin-top: 10px;
+}
+
+.resend-otp span {
+    color: rgb(22, 194, 6);
+}
+
 
