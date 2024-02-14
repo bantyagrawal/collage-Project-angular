@@ -1,15 +1,14 @@
-<mat-toolbar>
-    <span>BIJENDRA</span>
-    <span class="spacer"></span>
-    <mat-nav-list class="horizontal-list" routerLinkActive="active">
-        <li>
-            <a mat-list-item routerLink="">Home</a>
-        </li>
-        <li (click)="logout()">
-            <a mat-list-item>Logout</a>
-        </li>
-        <li>
-            <a mat-list-item routerLink="/otp" routerLinkActive="active">Otp</a>
-        </li>
-    </mat-nav-list>
-</mat-toolbar>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link"  routerLink="">Home</a>
+    </li>
+    <li class="nav-item" (click)="logout()" >
+      <a class="nav-link" routerLinkActive="active">Logout</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link disabled" tabindex="-1" >Disabled</a>
+    </li>
+  </ul>

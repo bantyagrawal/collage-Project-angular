@@ -1,0 +1,56 @@
+.carousel {
+    margin-top: 10px;
+    height: 400px;
+}
+
+.carousel-inner {
+    height: 400px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.card-container {
+    display: flex;
+    overflow-x: auto; 
+    width: 100%; 
+    padding: 10px; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.card-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.card {
+    width: 18rem; 
+    margin-right: 10px;
+    flex: 0 0 auto;
+}
+
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-row h1 {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.header-row a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

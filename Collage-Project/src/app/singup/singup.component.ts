@@ -18,6 +18,8 @@ export class SingupComponent implements OnInit {
   branch : string[] = [];
   semester : number[] = [];
   year : number[] = [];
+  batch : string[] = [];
+  selectedYear!: string;
 
   signupForm = new FormGroup({
     registration_number: new FormControl(''),
@@ -29,7 +31,8 @@ export class SingupComponent implements OnInit {
     branch: new FormControl(''),
     year: new FormControl(''),
     semester: new FormControl(''),
-    address: new FormControl('')
+    address: new FormControl(''),
+    batch: new FormControl('')
   })
 
   constructor(
@@ -53,6 +56,7 @@ export class SingupComponent implements OnInit {
     const { branch, duration } = this.course[index];
     this.branch = branch;
     this.year = Array.from({ length: duration }, (_, index) => index + 1);
+    this.populateBatch(duration);
 }
 
 openDialog() {
@@ -77,4 +81,14 @@ selectYear(year: number) {
 submit() {
   console.log('SIGN UP FORM', this.signupForm.value);
 }
+
+populateBatch(duration: number): void {
+  const currentYear = new Date().getFullYear();
+  for (let year = currentYear - 20; year <= currentYear; year++) {
+    const batch_range = (year + duration) % 100;
+    const batch = year + '-' + batch_range;
+    this.batch.push(batch);
+  }
+}
+
 }

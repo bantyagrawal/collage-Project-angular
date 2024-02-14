@@ -10,6 +10,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 const MaterialModules: any[] = [
@@ -24,6 +25,7 @@ const MaterialModules: any[] = [
   MatSelectModule,
   MatDatepickerModule,
   MatDialogModule,
+  MatNativeDateModule
 ];
 
 @NgModule({

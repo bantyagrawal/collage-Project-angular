@@ -1,9 +1,9 @@
-<div class="icon">
-    <mat-icon matSuffix (click)="closeDialog()">close</mat-icon>
-</div>
 <div class="map">
     <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15" style="height: 400px; width: 100%;">
         <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true"
-            (dragEnd)="markerDragEnd($event)"></agm-marker>
+        (dragEnd)="markerDragEnd($event)"></agm-marker>
     </agm-map>
+</div>
+<div class="icon">
+    <button mat-flat-button (click)="closeDialog()">Set Address</button>
 </div>

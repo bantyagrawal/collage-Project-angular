@@ -89,6 +89,16 @@
       <mat-icon class="icon icon-pointer" matSuffix (click)="openDialog()">location_on</mat-icon>
     </mat-form-field>
 
+    <label class="label">Batch</label>
+    <mat-form-field>
+      <mat-label>Select a batch</mat-label>
+      <mat-select formControlName="batch">
+        <mat-option *ngFor="let batch of batch" [value]="batch">
+          {{ batch }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
     <button mat-button class="button" type="submit" (click)="submit()">Signup</button>
     <div class="signup">
       <p>Already have an account? <span routerLink="/login" >Login</span></p>
