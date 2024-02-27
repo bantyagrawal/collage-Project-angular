@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../services/api-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MapComponent } from '../Shared/map/map.component';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-singup',
@@ -20,24 +21,27 @@ export class SingupComponent implements OnInit {
   year : number[] = [];
   batch : string[] = [];
   selectedYear!: string;
+  confirmPassword!: string;
+  submitted: boolean = false;
 
   signupForm = new FormGroup({
-    registration_number: new FormControl(''),
-    name: new FormControl(''),
-    email: new FormControl(''),
-    mobile: new FormControl(''),
-    password: new FormControl(''),
-    course: new FormControl(''),
-    branch: new FormControl(''),
-    year: new FormControl(''),
+    registrationNumber: new FormControl('',Validators.required),
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    mobile: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required]),
+    course: new FormControl('', Validators.required),
+    branch: new FormControl('', Validators.required),
+    year: new FormControl('', Validators.required),
     semester: new FormControl(''),
-    address: new FormControl(''),
-    batch: new FormControl('')
+    address: new FormControl('',Validators.required),
+    batch: new FormControl('',Validators.required)
   })
 
   constructor(
     private api : ApiServiceService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -79,7 +83,18 @@ selectYear(year: number) {
 }
 
 submit() {
-  console.log('SIGN UP FORM', this.signupForm.value);
+  this.submitted = true;
+  if (this.signupForm.invalid) {
+    return;
+  }
+
+  const data = this.signupForm.value;
+  this.api.post('signup',data).subscribe({
+    next: (res: any) => {
+      const { email } = res.response;
+      this.router.navigateByUrl('/otp', {state: { email }})
+    }
+  })
 }
 
 populateBatch(duration: number): void {
@@ -89,6 +104,10 @@ populateBatch(duration: number): void {
     const batch = year + '-' + batch_range;
     this.batch.push(batch);
   }
+}
+
+get formControl() {
+  return this.signupForm.controls;
 }
 
 }

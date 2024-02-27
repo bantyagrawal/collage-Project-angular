@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from '../Shared/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MaterialModuleModule } from '../material-module/material-module.module';
+import { FooterComponent } from '../Shared/footer/footer.component';
+import { BookComponent } from './book/book.component';
 
 
 
@@ -16,6 +18,8 @@ import { MaterialModuleModule } from '../material-module/material-module.module'
     LayoutComponent,
     HomeComponent,
     HeaderComponent,
+    FooterComponent,
+    BookComponent
   ],
   imports: [
     CommonModule,

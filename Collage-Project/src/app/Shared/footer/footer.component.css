@@ -1,0 +1,44 @@
+.footer{
+    background-color: #e6b104;
+}
+
+.list-header {
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.list-group-item{
+    background-color: #e6b104;
+    border: 0;
+    align-items: center;
+    display: flex;
+    
+}
+
+.icon{
+    margin-right: 5px;
+}
+
+.list-child{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.list-group{
+    margin-left: 100px;
+}
+
+.image{
+    margin: 10px 0px 10px 100px;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.container p {
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 500;
+}

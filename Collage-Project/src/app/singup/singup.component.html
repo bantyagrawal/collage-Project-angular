@@ -5,7 +5,7 @@
     <mat-form-field class="field">
       <mat-label>Registration Number</mat-label>
       <mat-icon class="icon" matSuffix>confirmation_number</mat-icon>
-      <input type="text" matInput placeholder="Enter Registration Number" formControlName="registration_number">
+      <input type="text" matInput placeholder="Enter Registration Number" formControlName="registrationNumber">
     </mat-form-field>
 
     <label class="label">Name</label>
@@ -42,7 +42,7 @@
     <label class="label">Confirm password</label>
     <mat-form-field class="field">
       <mat-label>Confirm password</mat-label>
-      <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Enter confirm password">
+      <input matInput [type]="hide2 ? 'password' : 'text'" placeholder="Enter confirm password" [(ngModel)]="confirmPassword"  [ngModelOptions]="{standalone: true}">
       <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide2">
         <mat-icon class="icon">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
